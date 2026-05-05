@@ -1,0 +1,24 @@
+// let gi2;
+let img;
+function preload() {
+  img = loadImage('gigi_murin.jpg');
+}
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  image(img,0,0,width,height);
+  maskG=createGraphics(width, height);
+  maskG.fill(252, 186, 3);
+  // maskG.image(img,0,0,width,height);
+  maskG.rect(10, 75, 380, 245);
+  maskG.erase();
+  maskG.stroke(0,0,0);
+  maskG.strokeWeight(3); // this honestly just made the text more bold
+  maskG.textSize(170);
+  maskG.text('Gigi!',20,250);
+    maskG.noErase();
+  image(maskG,0,0);
+}
