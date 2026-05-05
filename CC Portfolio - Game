@@ -1,0 +1,83 @@
+let X = 300;   
+let Y = 600;   
+let vel = 0;
+
+let X2 = 20;   
+let Y2 = 300;  
+let vel2 = 4; 
+
+let score = 0;
+
+function setup() {
+  createCanvas(600, 700);
+}
+
+function draw() {
+  background('rgb(144,207,234)');
+  
+  // text information
+  text('Press the ANY KEY to throw the ball!',20,50)
+
+  // ground
+  fill('green');
+  rect(0, 600, 600, 100);
+
+  // scoreboard box
+  fill(102, 51, 0);
+  rect(450, 490, 80, 60);
+  rect(485, 550, 10, 90);
+
+  // score text
+  fill(255);
+  textSize(14);
+  text("STYLE", 468, 510);
+  textSize(25);
+  text(score, 483, 535);
+
+  // ball
+  fill(255);
+  ellipse(X, Y, 20, 20);
+
+  // target
+  noStroke();
+  fill(255, 0, 0);
+  ellipse(X2, Y2, 70, 70);
+  fill(255);
+  ellipse(X2, Y2, 60, 60);
+  fill(255, 0, 0);
+  ellipse(X2, Y2, 40, 40);
+  fill(255);
+  ellipse(X2, Y2, 30, 30);
+  fill(255, 0, 0);
+  ellipse(X2, Y2, 10, 10);
+
+  // move target
+  X2 += vel2;
+
+  // move ball
+  Y += vel;
+
+  // reset ball when missing
+  if (Y < 250) {
+    vel = 0;
+    Y = 600;
+  }
+
+  // reset target if it passes the screen
+  if (X2 > width) {
+    X2 = 20;
+  }
+
+  // collision detection
+  if (dist(X, Y, X2, Y2) < 45) {
+    X2 = 20;
+    Y = 600;
+    vel = 0;
+    score++;
+  }
+}
+
+// launch ball on key press
+function keyPressed() {
+  vel = -5;
+}
