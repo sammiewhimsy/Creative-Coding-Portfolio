@@ -1,0 +1,48 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  
+  push(); // head
+  translate(-150,-100);
+  scale(7);
+  fill('gray');
+  noStroke();
+  bezier(50, 60, 5, 15, 95, 15, 50, 60);
+  pop();
+  
+  push(); // eye 1
+  noStroke();
+  fill('white');
+  circle(150,170,65);
+  pop();
+  
+  push(); // eye 2
+  translate(95, 0);
+  noStroke();
+  fill('white');
+  circle(150,170,65);
+  pop();
+  
+  push(); // eye 1.2 + eye shine
+  noStroke();
+  fill('black');
+  circle(150,170,55);
+  fill('white');
+  circle(150,160,25);
+  pop();
+  
+  push(); // eye 2.2 + eye shine
+  translate(95, 0);
+  noStroke();
+  fill('black');
+  circle(150,170,55);
+  fill('white');
+  circle(150,160,25);
+  pop();
+  
+  noFill(); // smile
+  arc(198, 180, 160, 150, 120, 103);
+}
