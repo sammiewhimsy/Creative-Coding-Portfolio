@@ -1,0 +1,93 @@
+// artwork of pero, fuwamoco's mascot (hololive)
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  noStroke();
+  
+  push(); // rotund body
+  translate(150, 180);
+  ellipse(50, 50, 280, 220);
+  ellipse(50, 39, 265, 250); // this is for more dog shape!
+  pop();
+  
+  push(); // side furs pt1.1
+  fill('white');
+  translate(40, 70);
+  triangle(-5, 65, 77, 40, 92, 105)
+  pop();
+  push(); // side furs pt1.2
+  fill('white');
+  translate(60, 100);
+  triangle(-5, 65, 77, 40, 92, 105)
+  pop();
+  
+  push(); // side furs pt2.1
+  fill('white');
+  translate(width, 0);
+  translate(-40, 65);
+  scale(-1, 1);
+  triangle(-5, 65, 77, 40, 92, 105)
+  pop();
+  push(); // side furs pt2.2
+  fill('white');
+  translate(width, 0);
+  translate(-60, 95);
+  scale(-1, 1);
+  triangle(-5, 65, 77, 40, 92, 105)
+  pop();
+  
+  push(); // ear one
+  scale(1.5);
+  translate(35, 18);
+  triangle(30, 75, 58, 20, 86, 75)
+  pop();
+  push(); // ear two
+  scale(1.5);
+  translate(115, 18);
+  triangle(30, 75, 58, 20, 86, 75)
+  pop();
+  
+  push(); // inner ear one
+  fill('rgb(251,161,230)');
+  translate(91, 28);
+  triangle(35, 65, 47, 40, 62, 65)
+  pop();
+  push(); // inner ear two
+  fill('rgb(251,161,230)');
+  translate(212, 28);
+  triangle(35, 65, 47, 40, 62, 65)
+  pop();
+  
+  push(); // horn one
+  fill('rgb(184,100,222)');
+  translate(119, 36);
+  triangle(30, 75, 47, 30, 66, 75)
+  pop();
+  push(); // horn two
+  fill('rgb(184,100,222)');
+  translate(180, 36);
+  triangle(30, 75, 47, 30, 66, 75)
+  pop();
+  
+  push(); // eyes
+  fill('black');
+  circle(155, 160, 15);
+  circle(245, 160, 15);
+  pop();
+  
+  push(); // nose
+  fill('black');
+  translate(153, 100);
+  triangle(35, 75, 47, 85, 60, 75);
+  pop();
+  
+  push(); // blush
+  fill('rgb(251,161,230)');
+  ellipse(130, 180, 30, 20);
+  ellipse(267, 180, 30, 20);
+  pop();
+}
