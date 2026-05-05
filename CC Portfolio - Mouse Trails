@@ -1,0 +1,11 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  //background(255);
+  strokeWeight(2);
+  stroke(mouseX,5,mouseY);
+  fill(mouseX,200,mouseY);
+  ellipse(mouseX, mouseY,15,15);
+}
