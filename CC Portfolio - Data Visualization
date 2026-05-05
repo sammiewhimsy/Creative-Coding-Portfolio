@@ -1,0 +1,19 @@
+var numbers = [19,30,62,89,54,20,35,48,70,46,27,30,67,43];
+
+function setup() {
+  createCanvas(600, 400);
+}
+
+function draw() {
+  background(220);
+  for (var i = 0; i<numbers.length;i++) {
+  var n = numbers[i];
+    var x = map(i,0,numbers.length,0,width);
+  var w = width/numbers.length;
+    var h = map(n,0,max(numbers),0,height);
+  var y = height -h;
+    var c = map(n,0,max(numbers),0,360)
+  fill(c, 255, 200);
+  rect(x,y,w,h);
+}
+}
