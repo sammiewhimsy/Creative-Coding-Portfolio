@@ -1,0 +1,21 @@
+let img;
+
+function preload() {
+  img = loadImage("gigi_murin.jpg");
+}
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  img.resize(400,400);
+  image(img,0,0);
+
+  let zoom = img.get(mouseX, mouseY);
+  stroke(252, 186, 3);
+  strokeWeight(2);
+  fill(zoom);
+  circle(mouseX, mouseY, 40)
+}
