@@ -1,0 +1,23 @@
+let img;
+function preload() {
+  img=loadImage("gigi_murin.jpg");
+}
+
+function setup() {
+  createCanvas(400, 400);
+  img.resize(400,400);
+  image(img,0,0,width,height);
+  img.loadPixels();
+  background(220);
+}
+
+function draw() {
+  for (let i = 0; i < 500; i++) {
+    let x = floor(random(img.width));
+    let y = floor(random(img.height));
+    let c = img.get(x, y);
+    fill(c);
+    noStroke();
+    ellipse(x, y, 3, 3);
+  }
+}
