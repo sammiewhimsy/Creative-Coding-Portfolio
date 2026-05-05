@@ -1,0 +1,22 @@
+let img;
+function preload() {
+  img=loadImage("gigi_murin.jpg");
+}
+
+function setup() {
+  createCanvas(600, 400);
+}
+
+function draw(){
+  background(190,220,250);
+  push();
+  translate(375, 212);
+  fill("rgb(246,236,214)");
+  triangle(0,0,70,150,150,0);
+  pop();
+  img.resize(200,200);
+  let mask1=createGraphics(200,200);
+  mask1.circle(100,100,190);
+  img.mask(mask1);
+  image(img,350,55);
+}
